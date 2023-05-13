@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import roboLogo from './assets/robo_logo.jpg';
+import './App.css';
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" />
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [displayedAnswer, setDisplayedAnswer] = useState('');
+
+
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+      <div className="image">
+        <a href="#" target="_blank">
+          <img src={roboLogo} className="logo" alt="Robot logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Kid Bot</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <div className="input-container">
+          <input type="text" placeholder="Enter your question, buddy" />
+          <button className="submit-button" onClick="">Submit</button>
+        </div>
+        <div className="answer">{displayedAnswer}</div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
